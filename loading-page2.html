@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(80, 80, 80);
+        }
+        #loading-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 30px;
+        }
+        #loading-bar {
+            width: 0%;
+            height: 100%;
+            background-color: black;
+            transition: width 0.5s linear; /* Ensure smooth transition */
+        }
+    </style>
+</head>
+<body>
+    <div class="body" id="loading-container">
+        <div id="loading-bar"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loadingBar = document.getElementById('loading-bar');
+    loadingBar.style.width = '50%'; // Reset the loading bar
+
+    // Simulate loading
+    let width = 50;
+    const interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+        } else {
+            width++;
+            loadingBar.style.width = width + '%';
+        }
+    }, 50); // Adjust the speed of loading (100ms for 10 seconds total)
+    // Redirect after 10 seconds
+
+            // Redirect to thank-you page after 10 seconds
+            setTimeout(function() {
+                window.location.href = "thank-you-page.html"; // Change this to your actual thank-you page URL
+            }, 5000); // 10 seconds
+        });
+    </script>
+</body>
+</html>

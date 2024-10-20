@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(80, 80, 80);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h3 {
+            margin-bottom: 20px; /* Add some space below the heading */
+            color: white;
+        }
+
+        .button-container {
+            display: flex; /* Use flexbox for the button container */
+            gap: 20px; /* Space between buttons */
+        }
+
+        button {
+            padding: 10px 20px; /* Add padding for a better button size */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: rgb(100, 100, 100); /* Button background color */
+            color: white; /* Text color */
+            font-size: 16px; /* Increase font size */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: rgb(150, 150, 150); /* Change background color on hover */
+        }
+    </style>
+    <title>Wait</title>
+</head>
+<body>
+    <h3>ARE YOU SURE?</h3>
+    <div class="button-container">
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+    </div>
+
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            window.location.href = "loading-page2.html"; // Redirect to the loading page
+        });
+        document.getElementById("noButton").addEventListener("click", function() {
+            window.location.href = "index.html"; // Redirect to the loading page
+        });
+    </script>
+</body>
+</html>
